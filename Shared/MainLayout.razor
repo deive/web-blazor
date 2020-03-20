@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="@NavMenuCssClass">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary" @onclick="ToggleNavMenu">
+            <span class="oi oi-menu" aria-hidden="true"></span></button>
+        </div>
+        <div class="img bg-wrap text-center py-4" style="background-image: url(images/logo_small.jpg);"></div>
+        <NavMenu />
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+        @Body
+    </div>
+</div>
+
+@code {
+    private bool collapseNavMenu = false;
+
+    private string NavMenuCssClass => collapseNavMenu ? "active" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

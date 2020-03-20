@@ -1,0 +1,28 @@
+﻿<AuthorizeView>
+    <Authorized>
+    <li>
+        <a href="Identity/Account/Manage">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> @context.User.Identity.Name
+        </a>
+    </li>
+    <li>
+        <form method="post" action="Identity/Account/LogOut">
+            <button type="submit" class="nav-link btn btn-link">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Log out
+            </button>
+        </form>
+    </li>
+    </Authorized>
+    <NotAuthorized>
+    <li>
+        <a href="Identity/Account/Register">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Log in
+        </a>
+    </li>
+    <li>
+        <a href="Identity/Account/Register">
+            <span class="oi oi-list-rich" aria-hidden="true"></span> Register
+        </a>
+    </li>
+    </NotAuthorized>
+</AuthorizeView>
